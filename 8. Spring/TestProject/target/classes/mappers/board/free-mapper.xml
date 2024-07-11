@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="freeMapper">
+	<resultMap type="free" id="freeResultSet">
+		<result column="fb_no" property="boardNo"></result>
+		<result column="fb_title" property="boardTitle"></result>
+		<result column="fb_content" property="boardContent"></result>
+		<result column="fb_indate" property="boardIndate"></result>
+		<result column="fb_views" property="boardViews"></result>
+		<result column="m_name" property="memberName"></result>
+		<result column="m_no" property="memberNo"></result>
+	</resultMap>
+
+	<select id="freeList" resultMap="freeResultSet">
+		SELECT fb_no, fb_title, fb_content, fb_indate, fb_views, m_name
+		from free_board fb
+		JOIN member m
+		ON fb.m_no = m.m_no
+		<choose>
+			<when test="category.equals('fb_title')">
+				WHERE fb_title LIKE '%' || #{searchText} || '%'
+			</when>
+			<when test="category.equals('fb_content')">
+				WHERE fb_content LIKE '%' || #{searchText} || '%'
+			</when>
+			<!-- <when test="category.equals('m_name')"> WHERE m_name LIKE '%' || 
+				#{searchText} || '%' </when> -->
+		</choose>
+
+		ORDER BY fb_indate DESC
+	</select>
+
+
+	<!-- _int vs int _int : 정수형 타입(기본형 변수 int를 뜻함) int : 객체(integer) -->
+	<select id="getListCount" resultType="_int">
+		SELECT COUNT(*)
+		FROM free_board
+		<choose>
+			<when test="category.equals('fb_title')">
+				WHERE fb_title LIKE '%' || #{searchText} || '%'
+			</when>
+			<when test="category.equals('fb_content')">
+				WHERE fb_content LIKE '%' || #{searchText} || '%'
+			</when>
+			<!-- <when test="category.equals('m_name')"> WHERE m_name LIKE '%' || 
+				#{searchText} || '%' </when> -->
+		</choose>
+
+	</select>
+	
+	<select id="getDetail" resultMap="freeResultSet">
+	<!-- 글번호, 제목, 작성자, 작성일, 조회수, 내용 -->
+	SELECT fb_no, fb_title, m_name, fb_indate, fb_views, fb_content 
+	FROM free_board fb 
+	JOIN member m
+	ON fb.m_no = m.m_no
+	WHERE fb_no=#{boardNo}
+	</select>
+</mapper>

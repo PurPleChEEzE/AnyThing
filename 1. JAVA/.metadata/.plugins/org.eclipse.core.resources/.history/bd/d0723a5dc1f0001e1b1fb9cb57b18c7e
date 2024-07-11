@@ -1,0 +1,44 @@
+package kr.co.quiz;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Ex14_ArrayList {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+		ArrayList<String> itgl = new ArrayList<>();
+		String name;
+
+		while (true) {
+
+			System.out.println("1. 학생 추가 ");
+			System.out.println("2. 학생 목록 출력 ");
+			System.out.println("3. 종료 ");
+			System.out.print("번호 입력 : ");
+			int x = sc.nextInt();
+			sc.nextLine();
+
+			switch (x) {
+			case 1:
+				
+				System.out.print("이름 입력 : ");
+				name = sc.nextLine();
+				itgl.add(name);
+				System.out.println();
+				break;
+			case 2:
+				System.out.println("저장된 목록 출력");
+				System.out.println(itgl);
+				break;
+			case 3:
+				System.out.println("프로그램 종료");
+				sc.close();
+				System.exit(0);
+			}
+		}
+
+	}
+
+}

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ko-kr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>레드향 주문하기</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            text-align: center;
+            padding: 20px;
+        }
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        fieldset {
+            border: 2px solid #007BFF;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            padding: 20px;
+        }
+        legend {
+            font-weight: bold;
+            color: #007BFF;
+        }
+        label {
+            display: block;
+            font-weight: bold;
+        }
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        input[type="checkbox"],
+        input[type="radio"] {
+            margin-right: 5px;
+        }
+        hr {
+            margin: 20px 0;
+        }
+        input[type="submit"] {
+            background-color: #007BFF;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>레드향 주문하기</h1>
+    <form action="/redGet.do" method="GET">
+        <fieldset>
+            <legend>상품 선택</legend>
+            <p>주문할 상품을 선택해 주세요.</p>
+            <label><input type="checkbox" name="product" value="gift_3">선물용 3kg</label>
+            <label><input type="checkbox" name="product" value="gift_5">선물용 5kg</label>
+            <label><input type="checkbox" name="product" value="family_3">가정용 3kg</label>
+            <label><input type="checkbox" name="product" value="family_5">가정용 5kg</label>
+        </fieldset>
+        <fieldset>
+            <legend>포장 선택</legend>
+            <label><input type="radio" name="gift" value="yes">선물 포장</label>
+            <label><input type="radio" name="gift" value="no">선물 포함 안 함</label>
+        </fieldset>
+        <fieldset>
+            <legend>배송정보</legend>
+            <ul>
+                <li>
+                    <label for="user_name">이름</label>
+                    <input type="text" id="user_name" name = "username">
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    <label for="addr">배송 주소</label>
+                    <input type="text" id="addr" name = "useraddr">
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    <label for="email">이메일</label>
+                    <input type="email" id="email" name = "useremail">
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    <label for="phone">연락처</label>
+                    <input type="tel" id="phone" name = "userphone">
+                </li>
+            </ul>
+        </fieldset>
+        <input type="submit" value="주문하기">
+    </form>
+</body>
+</html>

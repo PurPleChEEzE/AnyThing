@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Slider</title>
+    <link rel="stylesheet" href="./test.css">
+    <style>
+        
+    </style>
+</head>
+<body>
+
+<div class="slider">
+    <div class="slides">
+        <div class="slide">
+            <img src="./1.png" alt="Image 1">
+            <img src="./2.png" alt="Image 2">
+            <img src="./3.png" alt="Image 3">
+        </div>
+        <div class="slide">
+            <img src="./4.png" alt="Image 4">
+            <img src="./꼬.png" alt="Image 5">
+            <img src="./날씨.png" alt="Image 6">
+        </div>
+        <div class="slide">
+            <img src="./너의.png" alt="Image 7">
+            <img src="./노량.png" alt="Image 8">
+            <img src="./런.png" alt="Image 9">
+        </div>
+        <!-- 필요시 추가 -->
+    </div>
+    <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+    <button class="next" onclick="changeSlide(1)">&#10095;</button>
+</div>
+
+<script>
+    let slideIndex = 0;
+    const intervalTime = 2000; // 이 시간마다 변경
+
+    function changeSlide(n) {
+        showSlides(slideIndex += n);
+    }
+
+    function showSlides(n) {
+        const slides = document.querySelectorAll('.slide');
+        if (n >= slides.length) { slideIndex = 0 }
+        if (n < 0) { slideIndex = slides.length - 1 }
+        for (let slide of slides) {
+            slide.style.display = 'none';
+        }
+        slides[slideIndex].style.display = 'flex';
+    }
+
+    // 첫번쨰 슬라이드 출력
+    showSlides(slideIndex);
+
+    // 자동으로 슬라이드 변경
+    setInterval(() => {
+        changeSlide(1);
+    }, intervalTime);
+</script>
+
+</body>
+</html>

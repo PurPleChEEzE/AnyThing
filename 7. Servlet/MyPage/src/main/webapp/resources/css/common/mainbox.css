@@ -1,0 +1,454 @@
+@charset "UTF-8";
+
+@import url(post.css);
+
+.container {
+	margin: 0 auto;
+	width: 400px;
+	height: auto;
+	background-color: #f5f5f5;
+	padding-top: 10px;
+	padding-left: 15px;
+	padding-right: 30px;
+	border-radius: 15px;
+	border: 1px solid #ccc;
+	text-align: center;
+}
+
+body {
+	margin: 0;
+	background-color: rgb(11, 0, 79);
+}
+/* --------------- header ---------------- */
+.header {
+	background-color: rgb(11, 0, 79);
+	width: 100%;
+	height: 75px;
+}
+
+/* --------- 해더 컨텐츠 ----------- */
+header div h1 a {
+	display: inline;
+	float: left;
+	padding-left: 30px;
+	margin-right: 20px;
+	text-decoration: none;
+	color: #bc6969;
+}
+
+header div nav ul li {
+	display: inline-block;
+	flex-direction: row;
+	justify-content: space-between;
+	margin-top: 10px;
+	margin-left: 20px;
+}
+
+.nav {
+	width: 350px;
+	height: 54px;
+}
+
+.nav a {
+	text-decoration: none;
+}
+
+/* --------- 로그인 회원가입 ----------- */
+.table {
+	float: right;
+	display: inline-block;
+	flex-direction: row;
+	justify-content: space-evenly;
+	font-size: 12px;
+	margin: 5px 10px 0px 10px;
+	padding-top : 8px;
+}
+
+
+header div ul {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+header div ul li p {
+	margin:0;
+	color : #d2d2d2;
+}
+/* --------- a태그 색상, 호버 ----------- */
+.headerA {
+	color: #d2d2d2;
+	text-decoration: none;
+}
+
+.headerA:hover {
+	color: #fff;
+}
+
+/* --------- 드랍다운 한 폰트 사이즈 ----------- */
+.fontSmallSize {
+	font-size: 13px;
+}
+
+/* --------- 검색창 ----------- */
+.search-form {
+	height: 20px;
+	/* width: 20px; */
+	display: inline-block;
+	border-radius: 40px;
+	background: #fff;
+	margin: 15px auto;
+	line-height: 20px;
+	font-size: 18px;
+	box-shadow: 0px 0px 3px #111;
+	overflow: hidden;
+	position: relative;
+	width: auto;
+	float: right;
+	padding-top: 6px;
+	padding-bottom: 6px;
+}
+
+.search-form span {
+	width: 20px;
+	height: 20px;
+	display: inline-block;
+	text-align: center;
+}
+
+span.slens {
+	position: absolute;
+	z-index: 1;
+}
+
+input#s {
+	width: 0px;
+	margin: 0px 0px;
+	padding: 0px 0px 0px 40px;
+	border: none;
+	height: 20px;
+	vertical-align: top;
+	position: relative;
+	z-index: 2;
+	background: transparent;
+	-webkit-transition: width 1s; /* Safari */
+	transition: width 1s;
+}
+
+input#s:focus {
+	outline: none;
+	width: 180px;
+}
+
+.lens {
+	width: 20px;
+	height: 20px;
+	/* margin: 0; */
+	align-items: center;
+	margin-left: 3px;
+	margin-top: 1px;
+}
+
+.close {
+	width: 10px;
+	height: 10px;
+	margin-bottom: 6px;
+	margin-right: 4px;
+	overflow: hidden;
+	position: relative;
+}
+
+/* ------- 콘탠츠 드랍다운 --------*/
+.dropdown {
+	position: relative;
+	display: inline-block;
+	margin-bottom: 10px;
+}
+
+.dropdown-content {
+	display: none;
+	position: absolute;
+	z-index: 3; /*다른 요소들보다 앞에 배치*/
+	padding-top: 12px;
+}
+
+.dropdown-content a {
+	display: block;
+	width: 60px;
+	background-color: rgb(11, 0, 79);
+	padding-left: 5px;
+	padding-top: 10px;
+	padding-bottom: 5px;
+	margin-left: 10px;
+}
+
+.dropdown:hover .dropdown-content {
+	display: block;
+}
+
+/* -------------- main ---------------- */
+.main {
+	background-color: rgb(66, 66, 66);
+	width: 100%;
+	height: 950px;
+}
+
+.contents {
+	/* margin: 0 auto; */
+	width: 200px;
+	height: 270px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+	overflow: hidden;
+	border-radius: 10px;
+}
+
+.mainli {
+	display: inline;
+	flex-direction: row;
+	margin-left: 30px;
+}
+
+.dis {
+	display: inline;
+}
+
+.mainul {
+	list-style: none;
+	display: inline;
+	flex-direction: row;
+	bottom: auto;
+	position: relative;
+	left: 5.2%;
+	padding: 0;
+}
+
+.contents .img {
+	width: 200px;
+	height: 270px;
+	border-radius: 10px;
+	margin: 0px auto;
+	object-fit: cover;
+	transform: scale(1.0);
+	transition: transform 0.4s;
+}
+
+.img:hover {
+	transform: scale(1.1);
+	border-radius: 10px;
+	transition: transform 0.4s;
+}
+
+.white {
+	color: #fff;
+	margin-left: 140px;
+}
+/*--------- 슬라이드 사진 -------*/
+.slider {
+	width: 850px;
+	height: 500px;
+	position: relative;
+	/* padding-left: ; */
+	/* margin: 0 ; */
+	margin-right: 10%;
+	margin-left: 230px;
+	overflow: hidden; /* 현재 슬라이드 오른쪽에 위치한 나머지 슬라이드 들이 보이지 않도록 가림 */
+	box-shadow: 10px black;
+}
+
+.slider input[type=radio] {
+	display: none;
+}
+
+ul.imgs {
+	padding: 0;
+	list-style: none;
+	border-radius: 10px;
+}
+
+ul.imgs li {
+	position: absolute;
+	left: 500px;
+	/* right: 100px; */
+	transition-delay: 1s; /* 새 슬라이드가 이동해 오는 동안 이전 슬라이드 이미지가 배경이 보이도록 지연 */
+	padding: 0;
+	margin: 0;
+	background-color: rgb(66, 66, 66);
+}
+
+.bullets {
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+	bottom: 20px;
+	z-index: 2;
+}
+
+.bullets label {
+	display: inline-block;
+	border-radius: 50%;
+	background-color: rgba(183, 183, 183, 0.55);
+	width: 20px;
+	height: 20px;
+	cursor: pointer;
+}
+/* 현재 선택된 불릿 배경 흰색으로 구분 표시 */
+.slider input[type=radio]:nth-child(1):checked ~.bullets>label:nth-child(1)
+	{
+	background-color: #fff;
+}
+
+.slider input[type=radio]:nth-child(2):checked ~.bullets>label:nth-child(2)
+	{
+	background-color: #fff;
+}
+
+.slider input[type=radio]:nth-child(3):checked ~.bullets>label:nth-child(3)
+	{
+	background-color: #fff;
+}
+
+.slider input[type=radio]:nth-child(4):checked ~.bullets>label:nth-child(4)
+	{
+	background-color: #fff;
+}
+
+.slider input[type=radio]:nth-child(1):checked ~ul.imgs>li:nth-child(1)
+	{
+	left: 0;
+	transition: 0.5s;
+	z-index: 1;
+}
+
+.slider input[type=radio]:nth-child(2):checked ~ul.imgs>li:nth-child(2)
+	{
+	left: 0;
+	transition: 0.5s;
+	z-index: 1;
+}
+
+.slider input[type=radio]:nth-child(3):checked ~ul.imgs>li:nth-child(3)
+	{
+	left: 0;
+	transition: 0.5s;
+	z-index: 1;
+}
+
+.slider input[type=radio]:nth-child(4):checked ~ul.imgs>li:nth-child(4)
+	{
+	left: 0;
+	transition: 0.5s;
+	z-index: 1;
+}
+
+/* -------------- footer ---------------- */
+.footer {
+	background-color: rgb(11, 0, 79);
+	width: 100%;
+	height: 180px;
+	padding-top: 20px;
+}
+/* --------- 리스트 ----------- */
+footer ul li {
+	display: inline;
+	flex-direction: row;
+	justify-content: space-between;
+	margin-right: 8px;
+}
+
+footer ul {
+	padding-left: 30px;
+}
+
+.footerA {
+	color: #a9a9a9;
+	text-decoration: none;
+	font-size: 10px;
+}
+
+.footerA:hover {
+	color: blue;
+}
+
+.kk {
+	display: inline;
+	margin-left: 15px;
+	margin-top: 0;
+	margin-bottom: 20px;
+}
+
+.kk a {
+	text-decoration: none;
+	color: #cacaca;
+}
+
+/* --------- 다른폰트 리스트 ----------- */
+.footerB {
+	color: #d6d6d6;
+	text-decoration: none;
+	font-size: 10px;
+	font-weight: bold;
+}
+
+/* --------- 음... ----------- */
+.select {
+	float: right;
+	margin-right: 40px;
+	background-color: rgb(71, 62, 134);
+	color: #a6a6a6;
+	font-size: 11px;
+	border-radius: 4px;
+	padding: 3px 6px 3px 6px;
+	border: 0;
+}
+
+/* --------- 회사 정보 ----------- */
+.tail {
+	font-size: 10px;
+	margin-left: 30px;
+	margin-top: 0;
+	color: #a6a6a6;
+}
+
+.tailhover:hover {
+	color: blue;
+}
+
+.login-page {
+	/* position: absolute;
+            top: 30%;
+            left: 30%; */
+	margin: 0 auto;
+	padding: 0;
+	width: 400px;
+	height: 300px;
+	padding-top: 10px;
+	border: 1px solid rgb(0, 0, 0);
+	border-radius: 15px;
+	font-size: 15px;
+	text-align: center;
+	background-color: #f5f5f5;
+}
+
+.input-box {
+	width: 300px;
+	height: 40px;
+	margin-bottom: 15px;
+	border-radius: 10px;
+	font-size: 13px;
+}
+
+.remember-check {
+	margin-bottom: 20px;
+	background-color: slateblue;
+	border: 1px solid black;
+}
+
+.button-box {
+	width: 300px;
+	height: 40px;
+	border-radius: 15px;
+	background-color: slateblue;
+	color: white;
+	font-size: 18px;
+}

@@ -1,0 +1,67 @@
+package kr.co.quiz2;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class CafeOrder {
+	public static void main(String[] args) {
+		// ArrayList를 사용하며, OrderDTO 타입의 변수명 orderList를 생성
+		// Scanner 객체 생성 (변수명 : sc)
+		ArrayList<OrderDTO> orderList = new ArrayList<>();
+		Scanner sc = new Scanner(System.in);
+		int orderCounter = 1; // 주문 번호를 자동으로 증가시킬 변수
+		boolean isTrue = true;
+
+		while (isTrue) {
+			System.out.println("1. 주문 입력");
+			System.out.println("2. 주문 목록 출력");
+			System.out.println("3. 종료");
+			System.out.print("메뉴를 선택하세요: ");
+			int choice = sc.nextInt();
+			sc.nextLine();
+
+			switch (choice) {
+			case 1:
+				System.out.print("주문자 이름 : ");
+				String customerName = sc.nextLine();
+				System.out.println("주문 번호 : " + orderCounter);
+				System.out.print("주문 물품 : ");
+				String orderItem = sc.nextLine();
+				OrderDTO dto = new OrderDTO(customerName, orderCounter, orderItem);
+				orderList.add(dto);
+				orderCounter = orderCounter + 1;
+
+				System.out.println("주문이 접수되었습니다.");
+				break;
+//             			주문자 이름과 주문 물품을 입력 받습니다.
+//             			OrderDTO 객체를 생성하며 생성자로 주문자 이름, 주문 번호, 주문 물품을 전달하여 저장합니다.
+//              			orderList에 객체를 추가하고, orderCounter 값을 1증가합니다.
+//              			“주문이 접수되었습니다.”를 출력하고 처음 매뉴로 돌아가세요.
+			case 2:
+				System.out.print("주문 번호 입력해주세요 : ");
+				int orderNum = sc.nextInt();
+				System.out.println(orderList.get(orderNum-1));
+				
+//				if (orderList.isEmpty()) {
+//					System.out.println("주문 목록이 비어있습니다. ");
+//				} else {
+//					for (int i = 0; i < orderList.size(); i++) {
+//					System.out.println("주문자 이름 : " + orderList.get(i).getCustomerName() + ", 주문 번호 : " + orderList.get(i).getOrderNumber() + ", 주문 물품 : " + orderList.get(i).getOrderItem());
+////						System.out.println(orderList.get(i));
+//					}
+//				}
+//				orderList가 비어있을 경우 “주문 목록이 비어 있습니다.” 출력
+//				비어있지 않을 경우 전체 주문 목록(orderList)에 대해 주문자 이름, 주문 번호, 주문 물품을 출력합니다.
+				break;
+			case 3:
+				System.out.println("프로그램을 종료합니다. ");
+				isTrue = false;
+//				“프로그램을 종료합니다.“ 출력 후 종료합니다.
+				break;
+			default:
+				System.out.println("존재하지 않는 메뉴입니다");
+//				“존재하지 않는 메뉴입니다.” 출력 후 처음 메뉴로 돌아갑니다
+			}
+		}
+	}
+}

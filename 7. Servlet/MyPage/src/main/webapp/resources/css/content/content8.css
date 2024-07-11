@@ -1,0 +1,314 @@
+
+body {
+    margin: 0;
+}
+/* --------------- header ---------------- */
+
+.header {
+    background-color: rgb(11, 0, 79);
+    width: 100%;
+    height: 70px;
+}
+
+/* --------- 해더 컨텐츠 ----------- */
+header div h1 {
+    display: inline;
+    float: left;
+    padding-left: 30px;
+    margin-right:20px ;
+}
+header div nav ul li {
+    display: inline-block;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 30px;
+    margin-left: 20px;
+}
+.nav {
+    width: 350px;
+    height: 54px;
+}
+
+.nav a{
+    text-decoration: none;
+}
+
+div a{
+    text-decoration: none;
+}
+
+/* --------- 로그인 회원가입 ----------- */
+.table {
+    float: right;
+    display: inline-block;
+    flex-direction: row;
+    justify-content: space-evenly;
+    font-size: 12px;
+    margin: 5px 10px 0px 10px;
+}
+
+header div ul {
+    margin-top: 0;
+    margin-bottom: 0;
+    
+}
+/* --------- a태그 색상, 호버 ----------- */
+.headerA{
+    color: #d2d2d2;
+    text-decoration: none;
+}
+.headerA:hover {
+    color: #fff;
+}
+
+/* --------- 드랍다운 한 폰트 사이즈 ----------- */
+.fontSmallSize {
+    font-size: 13px;
+}
+
+
+/* --------- 검색창 ----------- */
+.search-form{
+    height:20px;
+    /* width: 20px; */
+    display:inline-block;
+    border-radius:40px;
+    background:#fff;
+    margin:15px auto;
+    line-height:20px;
+    font-size:18px;
+    box-shadow:0px 0px 3px #111;
+    overflow:hidden;
+    position:relative;
+    width:auto;
+    float: right;
+    padding-top: 6px;
+    padding-bottom: 6px;
+}
+
+.search-form span{
+    width:20px;
+    height:20px;
+    display:inline-block;
+    text-align:center;
+}
+span.slens{
+    position:absolute;
+    z-index:1;
+}
+input#s{
+    width:0px;
+    margin:0px 0px;
+    padding:0px 0px 0px 40px;
+    border:none;
+    height:20px;
+    vertical-align:top;
+    position:relative;
+    z-index:2;
+    background:transparent;
+    -webkit-transition: width 1s; /* Safari */
+    transition: width 1s; 
+}
+
+input#s:focus{
+    outline:none;
+    width:180px;
+}
+.lens {
+    width: 20px;
+    height: 20px;
+    /* margin: 0; */
+    align-items: center;
+    margin-left: 3px;
+    margin-top: 1px;
+
+}
+.close {
+    width: 10px;
+    height: 10px;
+    margin-bottom: 6px;
+    margin-right: 4px;
+    overflow: hidden;
+    position: relative;
+}
+
+
+/* ------- 콘탠츠 드랍다운 --------*/ 
+.dropdown{
+    position : relative;
+    display : inline-block;
+    
+    margin-bottom: 10px;
+}
+.dropdown-content{
+    display : none;
+    position : absolute;
+    z-index : 1; /*다른 요소들보다 앞에 배치*/
+    padding-top: 12px;
+}
+
+.dropdown-content a{
+    display : block;
+    
+    width: 60px;
+    background-color: slateblue;
+    padding-left: 5px;
+    padding-top: 10px;
+    padding-bottom: 5px;
+    margin-left: 10px;
+
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}  
+
+/* -------------- main ---------------- */
+.main {
+    background-color: black;
+    width: 100%;
+    height: 850px;
+}
+
+/* main img {
+    width: 1000px;
+    height: 500px;
+    margin-left: 15%;
+    margin-top: 0;
+    border-radius:4px ;
+    opacity: 0.7;
+}
+.watch {
+    background-color: blue;
+    width: 100px;
+    height: 50px;
+} */
+.user-wrap {
+    width: 890px;
+    height: 500px;
+    position: relative;
+    top: 8%;
+    margin-left: 18%;
+    background: linear-gradient(
+        to top,
+        rgba(20, 20, 20, 0.2) 10%,
+        rgba(20, 20, 20, 0.25) 25%,
+        rgba(20, 20, 20, 0.5) 50%,
+        rgba(20, 20, 20, 0.6) 65%,
+        rgb(0, 0, 0) 100%
+    ),
+    url(/resources/photos/날씨.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    /* border-radius: 30px; */
+    /* padding-top: 30px; */
+}
+.user-wrap img {
+    width: 1000px;
+    /* vertical-align: middle; */
+    border-radius: 20px;
+    margin-top: 10px;
+    /* padding-top: 30px; */
+}
+
+
+.user-text {
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    width: 280px;
+    height: 40px;
+    border-radius: 10px;
+    transform: translate(-150%, 540%);
+    font-size: 40px;
+    text-align: center;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    background-color: rgb(119, 109, 185);
+    /* opacity: 0.8; */
+}
+.user-text:hover {
+    background-color: rgb(122, 87, 170);
+}
+.font {
+    color: #fff;
+    margin-left: 10%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* -------------- footer ---------------- */
+
+.footer {
+    background-color: slateblue;
+    width: 100%;
+    height: 180px;
+    padding-top: 20px;
+}
+/* --------- 리스트 ----------- */
+footer ul li {
+    display: inline;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-right: 8px;
+     
+}
+footer ul {
+    padding-left: 30px;
+}
+.footerA{
+    color: #a9a9a9;
+    text-decoration: none;
+    font-size: 10px;
+}
+.footerA:hover {
+    color:blue; 
+}
+
+
+
+/* --------- 다른폰트 리스트 ----------- */
+.footerB {
+    color: #d6d6d6;
+    text-decoration: none;
+    font-size: 10px;
+    font-weight: bold;
+}
+
+
+/* --------- 음... ----------- */
+.select {
+    float: right;
+    margin-right: 40px;
+    background-color:rgb(71, 62, 134);
+    color: #a6a6a6;
+    font-size: 11px;
+    border-radius: 4px;
+    padding: 3px 6px 3px 6px;
+    border: 0;
+}
+
+
+/* --------- 회사 정보 ----------- */
+.tail {
+    font-size: 10px;
+    margin-left: 30px;
+    margin-top: 0;
+    color: #a6a6a6;
+}
+
+.tailhover:hover {
+    color: blue;
+}
+
